@@ -1,0 +1,11 @@
+MO clk_gen NULL clk_gen.v vlg6B/clk__gen.bin 1730251139
+MO DM NULL DM.v vlg21/_d_m.bin 1731152984
+MO regfile NULL GRF.v vlg72/regfile.bin 1730250362
+MO IM NULL IM.v vlg3A/_i_m.bin 1731152984
+MO instr_register NULL instr_register.v vlg28/instr__register.bin 1730247754
+MO GRF NULL GRF.v vlg4F/_g_r_f.bin 1731152984
+MO mips NULL mips.v vlg1D/mips.bin 1731152984
+MO IFU NULL IFU.v vlg54/_i_f_u.bin 1731152984
+MO ALU NULL ALU.v vlg2A/_a_l_u.bin 1731152984
+MO controller NULL controller.v vlg54/controller.bin 1731152984
+MO alu NULL ALU.v vlg0A/alu.bin 1730356047

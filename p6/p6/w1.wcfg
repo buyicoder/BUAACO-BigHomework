@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:/COexcercise/p5/P5_NEW/tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="30" />
+   <wvobject fp_name="/tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Tuse_RS0" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Tuse_RS0</obj_property>
+      <obj_property name="ObjectShortName">Tuse_RS0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Tuse_RS1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Tuse_RS1</obj_property>
+      <obj_property name="ObjectShortName">Tuse_RS1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Tuse_RT0" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Tuse_RT0</obj_property>
+      <obj_property name="ObjectShortName">Tuse_RT0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Tuse_RT1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Tuse_RT1</obj_property>
+      <obj_property name="ObjectShortName">Tuse_RT1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Tuse_RT2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Tuse_RT2</obj_property>
+      <obj_property name="ObjectShortName">Tuse_RT2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Tnew_E" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Tnew_E[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Tnew_E[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Tnew_M" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Tnew_M[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Tnew_M[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RS0_E1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RS0_E1</obj_property>
+      <obj_property name="ObjectShortName">Stall_RS0_E1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RS0_E2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RS0_E2</obj_property>
+      <obj_property name="ObjectShortName">Stall_RS0_E2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RS0_M1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RS0_M1</obj_property>
+      <obj_property name="ObjectShortName">Stall_RS0_M1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RS1_E2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RS1_E2</obj_property>
+      <obj_property name="ObjectShortName">Stall_RS1_E2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RT0_E1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RT0_E1</obj_property>
+      <obj_property name="ObjectShortName">Stall_RT0_E1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RT0_E2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RT0_E2</obj_property>
+      <obj_property name="ObjectShortName">Stall_RT0_E2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RT0_M1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RT0_M1</obj_property>
+      <obj_property name="ObjectShortName">Stall_RT0_M1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RT1_E2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RT1_E2</obj_property>
+      <obj_property name="ObjectShortName">Stall_RT1_E2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RS</obj_property>
+      <obj_property name="ObjectShortName">Stall_RS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall_RT" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall_RT</obj_property>
+      <obj_property name="ObjectShortName">Stall_RT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Stall" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Stall</obj_property>
+      <obj_property name="ObjectShortName">Stall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/instr_D" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instr_D[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_D[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/pc_D" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pc_D[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_D[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Forward_M" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Forward_M</obj_property>
+      <obj_property name="ObjectShortName">Forward_M</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/WD_M" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">WD_M[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WD_M[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/Result_W" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Result_W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Result_W[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/RegWrite_W" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RegWrite_W</obj_property>
+      <obj_property name="ObjectShortName">RegWrite_W</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/MemWrite_M" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemWrite_M</obj_property>
+      <obj_property name="ObjectShortName">MemWrite_M</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/ALUOut_M" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALUOut_M[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOut_M[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/WriteReg_W" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">WriteReg_W[4:0]</obj_property>
+      <obj_property name="ObjectShortName">WriteReg_W[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/uut/WriteReg_E" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">WriteReg_E[4:0]</obj_property>
+      <obj_property name="ObjectShortName">WriteReg_E[4:0]</obj_property>
+   </wvobject>
+</wave_config>

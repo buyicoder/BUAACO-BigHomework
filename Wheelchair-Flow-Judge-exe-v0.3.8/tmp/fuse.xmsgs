@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"E:\COexcercise\Wheelchair-Flow-Judge-exe-v0.3.8\tmp\tb.v" Line 3: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">tb</arg>&gt;.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"E:\COexcercise\Wheelchair-Flow-Judge-exe-v0.3.8\tmp\tb.v" Line 6: Port <arg fmt="%s" index="1">i_inst_rdata</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"E:\COexcercise\p6\p6_test\mips.v" Line 162: Port <arg fmt="%s" index="1">MemControl</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"E:\COexcercise\p6\p6_test\mips.v" Line 232: Port <arg fmt="%s" index="1">Branch</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"E:\COexcercise\p6\p6_test\mips.v" Line 315: Port <arg fmt="%s" index="1">Branch</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"E:\COexcercise\p6\p6_test\mips.v" Line 392: Port <arg fmt="%s" index="1">MemWrite</arg> is not connected to this instance
+</msg>
+
+</messages>
+

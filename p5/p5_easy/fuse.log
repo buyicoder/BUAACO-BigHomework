@@ -1,0 +1,10 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o E:/COexcercise/p5/p5_easy/tb_isim_beh.exe -prj E:/COexcercise/p5/p5_easy/tb_beh.prj work.tb work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 16
+Turning on mult-threading, number of parallel sub-compilation jobs: 32 
+Determining compilation order of HDL files
+Analyzing Verilog file "E:/COexcercise/p5/p5_easy/tb.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+ERROR:HDLCompiler:1654 - "E:/COexcercise/p5/p5_easy/tb.v" Line 32: Instantiating <uut> from unknown module <mips>
+ERROR:Simulator:778 - Static elaboration of top level Verilog design unit(s) in library work failed

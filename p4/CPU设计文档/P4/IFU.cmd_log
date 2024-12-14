@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "E:/COexcercise/p4/P4/IFU.xst" -ofn "E:/COexcercise/p4/P4/IFU.syr" 

@@ -1,0 +1,705 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: mips.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "mips.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "mips"
+Output Format                      : NGC
+Target Device                      : xa3s50-4-vqg100
+
+---- Source Options
+Top Module Name                    : mips
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "IM.v" in library work
+Compiling verilog file "MW_REG.v" in library work
+Module <IM> compiled
+Compiling verilog file "IFU.v" in library work
+Module <MW_REG> compiled
+Compiling verilog file "GRF.v" in library work
+Module <IFU> compiled
+Compiling verilog file "FD_REG.v" in library work
+Module <GRF> compiled
+Compiling verilog file "EM_REG.v" in library work
+Module <FD_REG> compiled
+Compiling verilog file "DM.v" in library work
+Module <EM_REG> compiled
+Compiling verilog file "DE_REG.v" in library work
+Module <DM> compiled
+Compiling verilog file "controller.v" in library work
+Module <DE_REG> compiled
+Compiling verilog file "ALU.v" in library work
+Module <controller> compiled
+Compiling verilog file "mips.v" in library work
+Module <ALU> compiled
+Module <mips> compiled
+No errors in compilation
+Analysis of file <"mips.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <mips> in library <work>.
+
+Analyzing hierarchy for module <IFU> in library <work>.
+
+Analyzing hierarchy for module <FD_REG> in library <work>.
+
+Analyzing hierarchy for module <controller> in library <work>.
+
+Analyzing hierarchy for module <GRF> in library <work>.
+
+Analyzing hierarchy for module <DE_REG> in library <work>.
+
+Analyzing hierarchy for module <ALU> in library <work>.
+
+Analyzing hierarchy for module <EM_REG> in library <work>.
+
+Analyzing hierarchy for module <DM> in library <work>.
+
+Analyzing hierarchy for module <MW_REG> in library <work>.
+
+Analyzing hierarchy for module <IM> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <mips>.
+Module <mips> is correct for synthesis.
+ 
+Analyzing module <IFU> in library <work>.
+Module <IFU> is correct for synthesis.
+ 
+Analyzing module <IM> in library <work>.
+INFO:Xst:2546 - "IM.v" line 30: reading initialization file "code.txt".
+WARNING:Xst:2319 - "IM.v" line 30: Signal mem in initial block is partially initialized. The initialization will be ignored.
+Module <IM> is correct for synthesis.
+ 
+Analyzing module <FD_REG> in library <work>.
+Module <FD_REG> is correct for synthesis.
+ 
+Analyzing module <controller> in library <work>.
+WARNING:Xst:863 - "controller.v" line 32: Name conflict (<lui> and <LUI>, renaming lui as lui_rnm0).
+WARNING:Xst:863 - "controller.v" line 31: Name conflict (<ori> and <ORI>, renaming ori as ori_rnm0).
+WARNING:Xst:916 - "controller.v" line 99: Delay is ignored for synthesis.
+"controller.v" line 100: $display : add
+"controller.v" line 101: $display : sub
+"controller.v" line 102: $display : AND
+"controller.v" line 103: $display : OR
+"controller.v" line 104: $display : slt
+"controller.v" line 105: $display : lw
+"controller.v" line 106: $display : sw
+"controller.v" line 107: $display : beq
+"controller.v" line 108: $display : addi
+"controller.v" line 109: $display : ori
+"controller.v" line 110: $display : lui
+"controller.v" line 111: $display : j
+"controller.v" line 112: $display : nop
+"controller.v" line 113: $display : jr
+WARNING:Xst:905 - "controller.v" line 99: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <add>, <sub>, <AND>, <OR>, <slt>, <lw>, <sw>, <beq>, <addi>, <ori_rnm0>, <lui_rnm0>, <j>, <nop>, <jr>
+Module <controller> is correct for synthesis.
+ 
+Analyzing module <GRF> in library <work>.
+WARNING:Xst:2323 - "GRF.v" line 18: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "GRF.v" line 18: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "GRF.v" line 18: Parameter 4 is not constant in call of system task $display.
+"GRF.v" line 18: $display : @%h: $%d <= %h
+Module <GRF> is correct for synthesis.
+ 
+Analyzing module <DE_REG> in library <work>.
+Module <DE_REG> is correct for synthesis.
+ 
+Analyzing module <ALU> in library <work>.
+Module <ALU> is correct for synthesis.
+ 
+Analyzing module <EM_REG> in library <work>.
+Module <EM_REG> is correct for synthesis.
+ 
+Analyzing module <DM> in library <work>.
+WARNING:Xst:1643 - "DM.v" line 32: You are giving the signal i a default value. i already had a default value, which will be overridden by this one.
+WARNING:Xst:2323 - "DM.v" line 46: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "DM.v" line 46: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "DM.v" line 46: Parameter 4 is not constant in call of system task $display.
+"DM.v" line 46: $display : @%h: *%h <= %h
+Module <DM> is correct for synthesis.
+ 
+Analyzing module <MW_REG> in library <work>.
+Module <MW_REG> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <rf<31>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<30>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<29>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<28>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<27>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<26>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<25>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<24>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<23>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<22>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<21>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<20>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<19>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<18>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<17>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<16>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<15>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<14>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<13>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<12>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<11>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<10>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<9>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<8>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<7>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<6>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<5>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<4>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<3>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<2>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<1>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <rf<0>> in unit <GRF> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <i> in unit <GRF> has a constant value of 100000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <i> in unit <DM> has a constant value of 1000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1024>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1025>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1026>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1027>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1028>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1029>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1030>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1031>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1032>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1033>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1034>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1035>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1036>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1037>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1038>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1039>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1040>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1041>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1042>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1043>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1044>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1045>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1046>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1047>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1048>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1049>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1050>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1051>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1052>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1053>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1054>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1055>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1056>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1057>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1058>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1059>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1060>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1061>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1062>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1063>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1064>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1065>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1066>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1067>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1068>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1069>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1070>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1071>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1072>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1073>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1074>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1075>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1076>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1077>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1078>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1079>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1080>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1081>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1082>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1083>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1084>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1085>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1086>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1087>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1088>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1089>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1090>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1091>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1092>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1093>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1094>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1095>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1096>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1097>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1098>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1099>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1100>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1101>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1102>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1103>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1104>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1105>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1106>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1107>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1108>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1109>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1110>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1111>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1112>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1113>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1114>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1115>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1116>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1117>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1118>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1119>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1120>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1121>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1122>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1123>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1124>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1125>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1126>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1127>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1128>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1129>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1130>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1131>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1132>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1133>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1134>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1135>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1136>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1137>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1138>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1139>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1140>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1141>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1142>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1143>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1144>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1145>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1146>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1147>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1148>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1149>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1150>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1151>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1152>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1153>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1154>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1155>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1156>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1157>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1158>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1159>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1160>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1161>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1162>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1163>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1164>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1165>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1166>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1167>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1168>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1169>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1170>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1171>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1172>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1173>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1174>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1175>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1176>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1177>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1178>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1179>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1180>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1181>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1182>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1183>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1184>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1185>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1186>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1187>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1188>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1189>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1190>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1191>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1192>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1193>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1194>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1195>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1196>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1197>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1198>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1199>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1200>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1201>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1202>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1203>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1204>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1205>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1206>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1207>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1208>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1209>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1210>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1211>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1212>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1213>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1214>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1215>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1216>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1217>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1218>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1219>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1220>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1221>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1222>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1223>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1224>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1225>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1226>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1227>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1228>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1229>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1230>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1231>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1232>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1233>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1234>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1235>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1236>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1237>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1238>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1239>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1240>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1241>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1242>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1243>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1244>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1245>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1246>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1247>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1248>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1249>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1250>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1251>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1252>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1253>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1254>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1255>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1256>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1257>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1258>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1259>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1260>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1261>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1262>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1263>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1264>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1265>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1266>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1267>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1268>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1269>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1270>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1271>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1272>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1273>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1274>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1275>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1276>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1277>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1278>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1279>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1280>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1281>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1282>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1283>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1284>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1285>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1286>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1287>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1288>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1289>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1290>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1291>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1292>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1293>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1294>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1295>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1296>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1297>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1298>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1299>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1300>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1301>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1302>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1303>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1304>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1305>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1306>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1307>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1308>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1309>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1310>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1311>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1312>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1313>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1314>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1315>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1316>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1317>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1318>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1319>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1320>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1321>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1322>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1323>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1324>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1325>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1326>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1327>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1328>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1329>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1330>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1331>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1332>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1333>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1334>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1335>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1336>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1337>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1338>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1339>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1340>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1341>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1342>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1343>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1344>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1345>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1346>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1347>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1348>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1349>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1350>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1351>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1352>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1353>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1354>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1355>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1356>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1357>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1358>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1359>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1360>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1361>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1362>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1363>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1364>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1365>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1366>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1367>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1368>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1369>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1370>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1371>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1372>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1373>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1374>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1375>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1376>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1377>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1378>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1379>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1380>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1381>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1382>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1383>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1384>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1385>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1386>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1387>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1388>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1389>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1390>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1391>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1392>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1393>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1394>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1395>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1396>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1397>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1398>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1399>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1400>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1401>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1402>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1403>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1404>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1405>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1406>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1407>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1408>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1409>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1410>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1411>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1412>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1413>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1414>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1415>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1416>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1417>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1418>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1419>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1420>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1421>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1422>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1423>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1424>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1425>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1426>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1427>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1428>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1429>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1430>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1431>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1432>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1433>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1434>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1435>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1436>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1437>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1438>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1439>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1440>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1441>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1442>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1443>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1444>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1445>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1446>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1447>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1448>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1449>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1450>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1451>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1452>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1453>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1454>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1455>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1456>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1457>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1458>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1459>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1460>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1461>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1462>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1463>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem<1464>> in unit <DM> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.

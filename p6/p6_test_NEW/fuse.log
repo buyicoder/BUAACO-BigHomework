@@ -1,0 +1,42 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -nodebug -prj mips.prj -o mips.exe generated_mips_test 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 16
+Turning on mult-threading, number of parallel sub-compilation jobs: 32 
+Determining compilation order of HDL files
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/ALU.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/controller.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/DE_REG.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/DM.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/EM_REG.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/FD_REG.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/generated_mips_test.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/GRF.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/IFU.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/IM.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/MDF.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/mips.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/mips_tb.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/MW_REG.v" into library work
+Analyzing Verilog file "E:\COexcercise\p6\p6_test_NEW/tb.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "E:\COexcercise\p6\p6_test_NEW/mips.v" Line 162: Port MemControl is not connected to this instance
+WARNING:HDLCompiler:1016 - "E:\COexcercise\p6\p6_test_NEW/mips.v" Line 233: Port Branch is not connected to this instance
+WARNING:HDLCompiler:1016 - "E:\COexcercise\p6\p6_test_NEW/mips.v" Line 316: Port Branch is not connected to this instance
+WARNING:HDLCompiler:1016 - "E:\COexcercise\p6\p6_test_NEW/mips.v" Line 403: Port MemWrite is not connected to this instance
+Completed static elaboration
+Compiling module IFU
+Compiling module FD_REG
+Compiling module controller
+Compiling module GRF
+Compiling module DE_REG
+Compiling module ALU
+Compiling module MDF
+Compiling module EM_REG
+Compiling module MW_REG
+Compiling module mips
+Compiling module generated_mips_test
+Time Resolution for simulation is 1ps.
+Compiled 11 Verilog Units
+Built simulation executable mips.exe
+Fuse Memory Usage: 35616 KB
+Fuse CPU Usage: 61 ms

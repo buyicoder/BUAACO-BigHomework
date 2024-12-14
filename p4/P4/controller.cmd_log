@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "E:/COexcercise/p4/P4/controller.xst" -ofn "E:/COexcercise/p4/P4/controller.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim controller.ngc controller_synthesis.v 
+xst -intstyle ise -ifn "E:/COexcercise/p4/P4/controller.xst" -ofn "E:/COexcercise/p4/P4/controller.syr" 

@@ -1,0 +1,5 @@
+set -tmpdir "E:/COexcercise/p5/p5/xst/projnav.tmp"
+set -xsthdpdir "E:/COexcercise/p5/p5/xst"
+elaborate
+-ifn MW_REG.prj
+-ifmt mixed

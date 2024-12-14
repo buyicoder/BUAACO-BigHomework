@@ -1,0 +1,7 @@
+verilog work "IM.v"
+verilog work "IFU.v"
+verilog work "GRF.v"
+verilog work "DM.v"
+verilog work "controller.v"
+verilog work "ALU.v"
+verilog work "mips.v"

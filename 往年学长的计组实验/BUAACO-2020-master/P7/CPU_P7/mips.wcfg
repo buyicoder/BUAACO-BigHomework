@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="F:/Course/CO/P7/CPU_P7/CPU_TestBench_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="CPU_TestBench" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/CPU_TestBench/addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_TestBench/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_TestBench/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_TestBench/interrupt" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">interrupt</obj_property>
+      <obj_property name="ObjectShortName">interrupt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_TestBench/flag" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flag</obj_property>
+      <obj_property name="ObjectShortName">flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_TestBench/uut/CPU/CP0/SR" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_TestBench/uut/CPU/CP0/EPC" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">EPC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">EPC[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CPU_TestBench/uut/CPU/CP0/Cause" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Cause[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Cause[31:0]</obj_property>
+   </wvobject>
+</wave_config>

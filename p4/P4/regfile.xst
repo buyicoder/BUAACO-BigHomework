@@ -1,0 +1,5 @@
+set -tmpdir "E:/COexcercise/p4/P4/xst/projnav.tmp"
+set -xsthdpdir "E:/COexcercise/p4/P4/xst"
+elaborate
+-ifn regfile.prj
+-ifmt mixed

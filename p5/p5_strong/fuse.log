@@ -1,0 +1,32 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -nodebug -prj mips.prj -o mips.exe generated_mips_test 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 16
+Turning on mult-threading, number of parallel sub-compilation jobs: 32 
+Determining compilation order of HDL files
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/ALU.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/controller.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/DE_REG.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/DM.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/EM_REG.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/FD_REG.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/generated_mips_test.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/GRF.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/IFU.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/IM.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/mips.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/MW_REG.v" into library work
+Analyzing Verilog file "E:\COexcercise\p5\p5_strong/tb.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:267 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 23: Cannot find port w_inst_addr on this module
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 27: Module <mips> does not have a port named <i_inst_addr>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 28: Module <mips> does not have a port named <i_inst_rdata>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 30: Module <mips> does not have a port named <m_data_addr>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 31: Module <mips> does not have a port named <m_data_rdata>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 32: Module <mips> does not have a port named <m_data_wdata>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 33: Module <mips> does not have a port named <m_data_byteen>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 35: Module <mips> does not have a port named <m_inst_addr>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 37: Module <mips> does not have a port named <w_grf_we>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 38: Module <mips> does not have a port named <w_grf_addr>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 39: Module <mips> does not have a port named <w_grf_wdata>.
+ERROR:HDLCompiler:25 - "E:\COexcercise\p5\p5_strong/generated_mips_test.v" Line 41: Module <mips> does not have a port named <w_inst_addr>.
+ERROR:Simulator:778 - Static elaboration of top level Verilog design unit(s) in library work failed

@@ -1,0 +1,33 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to E:/COexcercise/p4/P4/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to E:/COexcercise/p4/P4/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "aludec.v" in library work
+ERROR:HDLCompilers:26 - "aludec.v" line 21 expecting ')', found '['
+ERROR:HDLCompilers:26 - "aludec.v" line 25 unexpected token: 'case'
+Module <aludec> compiled
+ERROR:HDLCompilers:26 - "aludec.v" line 25 expecting 'endmodule', found '('
+Analysis of file <"aludec.prj"> failed.
+--> 
+
+Total memory usage is 4484020 kilobytes
+
+Number of errors   :    3 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

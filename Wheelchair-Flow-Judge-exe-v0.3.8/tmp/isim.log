@@ -1,0 +1,17 @@
+ISim log file
+Running: mips.exe -tclbatch mips.tcl 
+ISim P.20131013 (signature 0x7708f090)
+----------------------------------------------------------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+Time resolution is 1 ps
+# wave log -r uut
+# run 200us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+@00003000: $17 <= 0000000a
+@00003004: $18 <= 80000000
+# exit

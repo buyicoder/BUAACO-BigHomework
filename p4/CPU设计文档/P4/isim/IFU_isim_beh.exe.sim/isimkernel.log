@@ -1,0 +1,29 @@
+Command line:
+   IFU_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  55959
+
+Sun Nov 03 00:36:32 2024
+
+
+ Elaboration Time: 0 sec
+
+ Curr
+ Current Memory Usage: 5169.71 Meg
+
+ Total Signals          : 26
+ Total Nets             : 274
+ Total Signal Drivers   : 12
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 16
+ Total Traceable Variables  : 20
+ Total Scalar Nets and Variables : 131458
+
+ Total Simulation Time: 0.03125 sec
+
+ Current Memory Usage: 5484.28 Meg
+
+Sun Nov 03 00:36:37 2024
+

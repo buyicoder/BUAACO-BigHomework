@@ -1,0 +1,1 @@
+-nodebug -prj "files.prj" -o "mips.exe" "tb" 
